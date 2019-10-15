@@ -1,0 +1,131 @@
+---
+title: "Initial Example of Data Analysis"
+author: "Cong Mu"
+date: "09/06/2019"
+output: html_document
+---
+
+### Preliminaries
+
+```{r preliminaries, message=FALSE, warning=FALSE}
+library(faraway)
+library(ggplot2)
+```
+
+
+
+### Learn Your Data
+
+- Call up this particular dataset
+
+```{r}
+data(pima)
+```
+
+
+- Print out the data
+
+```{r}
+pima
+```
+
+
+- Summary of the data
+
+```{r}
+summary(pima)
+```
+
+
+- Check the data quality
+
+```{r}
+sort(pima$diastolic)
+```
+
+
+- Re-code missing values
+
+```{r}
+pima$diastolic[pima$diastolic == 0] <- NA
+pima$glucose[pima$glucose == 0] <- NA
+pima$triceps[pima$triceps == 0] <- NA
+pima$insulin[pima$insulin == 0] <- NA
+pima$bmi[pima$bmi == 0] <- NA
+```
+
+
+- Set categorical variable
+
+```{r}
+pima$test <- factor(pima$test)
+summary(pima$test)
+```
+
+
+- Add descriptive labels
+
+```{r}
+levels(pima$test) <- c("negative", "positive")
+summary(pima)
+```
+
+
+
+#### Visualization
+
+- Histogram
+
+```{r}
+hist(pima$diastolic, xlab = "Diastolic", main = "")
+```
+
+- Kernel estimate 
+
+```{r}
+plot(density(pima$diastolic,na.rm=TRUE), main = "")
+```
+
+
+- Sorted data against its index
+
+```{r}
+plot(sort(pima$diastolic), ylab = "Sorted Diastolic")
+```
+
+
+- Scatterplot
+
+```{r}
+plot(diabetes ~ diastolic, pima)
+```
+
+
+- Boxplot
+
+```{r}
+plot(diabetes ~ test, pima)
+```
+
+
+- Powerful ggplot2
+
+```{r, warning=FALSE}
+ggplot(pima, aes(x=diastolic)) + geom_histogram()
+ggplot(pima, aes(x=diastolic)) + geom_density()
+ggplot(pima, aes(x=diastolic,y=diabetes)) + geom_point()
+
+ggplot(pima, aes(x=diastolic,y=diabetes,shape=test)) + geom_point() + theme(legend.position = "top", legend.direction = "horizontal")
+ggplot(pima, aes(x=diastolic,y=diabetes)) + geom_point(size = 1) + facet_grid(~test)
+```
+
+
+
+
+
+
+
+
+
+
+
