@@ -1,0 +1,1173 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[serif,mathserif,professionalfont]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{pxfonts}
+\usepackage{eulervm}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Section for EN.553.730]{Section for Statistical Theory} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{TA: Cong Mu} % Your name
+\institute[cmu2@jhu.edu] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Office Hour: Wednesday 09:30AM - 11:30AM
+%Johns Hopkins University \\ % Your institution for the title page
+\medskip
+\textit{} % Your email address
+}
+\date{October 29 \& 30, 2020} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+% Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+
+% A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+%------------------------------------------------
+
+
+%\begin{frame}
+%	
+%	\frametitle{Overview}
+%	
+%	\begin{figure}
+%		\includegraphics[width=1\linewidth]{W9F1}
+%	\end{figure}
+%	
+%	
+%\end{frame}
+
+
+\section{Review}
+
+
+
+\subsection{Preliminaries}
+
+
+
+\begin{frame}
+	
+	\frametitle{Preliminaries}
+	
+	\begin{block}{Size of the Test (page 217 in~\cite{BD2015})}
+		If we have a test statistic $ T $ with critical value $ c $, our test has size $ \alpha\left(c \right) $ given by
+		\begin{equation*}
+		\alpha\left(c \right) = \sup_{\theta \in \Theta_0} P_{\theta}\left[T\left(X \right) \geq c \right].
+		\eqno{(4.1.1)}
+		\end{equation*}
+	\end{block}
+
+	\begin{block}{Power Function (page 217 in~\cite{BD2015})}
+		Power function is defined for all $ \theta \in \Theta $ by
+		\begin{equation*}
+		\beta\left(\theta \right) = \beta\left(\theta, \delta \right) = P_{\theta}\left[\text{Rejection} \right] = P_{\theta}\left[\delta\left(X \right) = 1 \right] = P_{\theta}\left[T\left(X \right) \geq c \right].
+		\end{equation*} 
+	\end{block}
+	
+\end{frame}
+
+
+
+
+
+
+%\subsection{Exponential Families}
+%
+%
+%\begin{frame}
+%	
+%	\frametitle{Exponential Families}
+%	
+%	\begin{block}{$ k $-Parameter Exponential Families}
+%		The family of distributions of a model $ \{P_{\boldsymbol{\theta}} \; | \; \boldsymbol{\theta} \in \Theta \subset \mathbb{R}^k \} $ is said to be a $ k $-parameter exponential family if there exist real-valued functions $ \eta_1\left(\boldsymbol{\theta} \right), \cdots, \eta_k\left(\boldsymbol{\theta} \right), B\left(\boldsymbol{\theta} \right) $ defined for $ \boldsymbol{\theta} \in \Theta $, real-valued functions $ T_1\left(x \right), \cdots, T_k\left(x \right), h\left(x \right) $ defined for $ x \in \mathcal{X} $ such that the density (frequency) functions $ p\left(x, \boldsymbol{\theta} \right) $ of $ P_{\boldsymbol{\theta}} $ can be written as
+%%		\begin{equation*}
+%%		p\left(x, \boldsymbol{\theta} \right) = h\left(x \right) \exp \left[\sum_{j=1}^{k} \eta_j\left(\boldsymbol{\theta} \right) T_j\left(x \right) - B\left(\boldsymbol{\theta} \right)  \right],
+%%		\end{equation*}
+%%		or in matrix form as
+%		\begin{equation*}
+%		p\left(x, \boldsymbol{\theta} \right) = h\left(x \right) \exp \left[\boldsymbol{\eta}^\top\left(\boldsymbol{\theta} \right) \bm{T}\left(x \right) - B\left(\boldsymbol{\theta} \right)  \right],
+%		\eqno{(1.6.10)}
+%		\end{equation*}
+%		where
+%		\begin{equation*}
+%		\begin{split}
+%		\boldsymbol{\eta}\left(\boldsymbol{\theta} \right) & =
+%		\begin{bmatrix} 
+%		\eta_1\left(\boldsymbol{\theta} \right) & \cdots & \eta_k\left(\boldsymbol{\theta} \right) \end{bmatrix}^\top, \\
+%		\bm{T}\left(x \right) & =
+%		\begin{bmatrix} 
+%		T_1\left(x \right) & \cdots & T_k\left(x \right) 
+%		\end{bmatrix}^\top.
+%		\end{split}
+%		\end{equation*}
+%%		where $ \boldsymbol{\eta}\left(\boldsymbol{\theta} \right) = \begin{bmatrix} \eta_1\left(\boldsymbol{\theta} \right) & \cdots & \eta_k\left(\boldsymbol{\theta} \right) \end{bmatrix}^\top $ and $ \bm{T}\left(x \right) = \begin{bmatrix} T_1\left(x \right) & \cdots & T_k\left(x \right) \end{bmatrix}^\top $.
+%	\end{block}
+%	
+%	
+%	
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%	
+%	\frametitle{Exponential Families}
+%	
+%	\begin{block}{Canonical $ k $-Parameter Exponential Families}
+%		A useful reparametrization of the $ k $-parameter exponential family by letting the model be indexed by $ \boldsymbol{\eta} $ rather than $ \boldsymbol{\theta} $ has the form as
+%		\begin{equation*}
+%		q\left(x, \boldsymbol{\eta} \right) = h\left(x \right) \exp \left[\boldsymbol{\eta}^\top \bm{T}\left(x \right) - A\left(\boldsymbol{\eta} \right) \right],
+%		\end{equation*}
+%		where
+%		\begin{equation*}
+%		A\left(\boldsymbol{\eta} \right) = 
+%		\begin{cases}
+%		\displaystyle \log \int h\left(x \right) \exp \left[\boldsymbol{\eta}^\top \bm{T}\left(x \right) \right] dx  & \text{continuous case} \\
+%		\displaystyle \log \sum h\left(x \right) \exp \left[\boldsymbol{\eta}^\top \bm{T}\left(x \right) \right]  & \text{discrete case}
+%		\end{cases}.
+%		\end{equation*}
+%		Note that $ x \in \mathcal{X} $ and $ \boldsymbol{\eta} \in \mathcal{E} $ where $ \mathcal{E} $ is the collection of all $ \boldsymbol{\eta} $ such that $ A\left(\boldsymbol{\eta} \right) $ is finite.
+%	\end{block}
+%	
+%\end{frame}
+%
+%
+%
+%
+%
+%\begin{frame}
+%	
+%	\frametitle{Exponential Families}
+%	
+%	\begin{block}{Theorem 1.6.3 (page 59 in~\cite{BD2015})}
+%		Let $ \mathcal{P} $ be a canonical $k$-parameter exponential family generated by $ (\bm{T}, h) $ with corresponding natural parameter space $ \mathcal{E} $ and function $ A(\boldsymbol{\eta}) $. Then
+%		\begin{enumerate}[(a)]
+%			\item $ \mathcal{E} $ is convex.
+%			\item $ A: \mathcal{E} \rightarrow \mathbb{R} $ is convex.
+%			\item If $ \mathcal{E} $ has nonempty interior $ \mathcal{E}^0 $ in $ \mathbb{R}^k $ and $ \boldsymbol{\eta}_0 \in \mathcal{E}^0 $, then $ \bm{T}\left(X \right) $ has under $ \boldsymbol{\eta}_0 $ a moment-generating function $ M $ given by
+%			\begin{equation*}
+%			M\left(\bm{s} \right) = \exp \left[A\left(\boldsymbol{\eta}_0 + \bm{s} \right) - A\left(\boldsymbol{\eta}_0 \right) \right]
+%			\end{equation*} 
+%			valid for all $ \bm{s} $ such that $ \boldsymbol{\eta}_0 + \bm{s} \in \mathcal{E} $. Since $ \boldsymbol{\eta}_0 $ is an interior point this set of $ \bm{s} $ includes a ball about $ \bm{0} $.
+%		\end{enumerate}
+%	\end{block}
+%	
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%	
+%	\frametitle{Exponential Families}
+%	
+%	\begin{block}{Corollary 1.6.1 (page 59 in~\cite{BD2015})}
+%		Under the conditions of \textbf{Theorem 1.6.3}
+%		\begin{equation*}
+%		\begin{split}
+%		E_{\boldsymbol{\eta}_0}\left[\bm{T}\left(X \right) \right] & = \dot{A}\left(\boldsymbol{\eta}_0 \right), \\
+%		\text{Var}_{\boldsymbol{\eta}_0}\left[\bm{T}\left(X \right) \right] & = \ddot{A}\left(\boldsymbol{\eta}_0 \right),
+%		\end{split}
+%		\end{equation*}
+%		where
+%		\begin{equation*}
+%		\dot{A}\left(\boldsymbol{\eta}_0 \right) =  
+%		\begin{bmatrix}
+%		\frac{\partial A}{\partial \eta_1}\left(\boldsymbol{\eta}_0 \right) \\
+%		\vdots \\
+%		\frac{\partial A}{\partial \eta_k}\left(\boldsymbol{\eta}_0 \right)
+%		\end{bmatrix},
+%		\qquad 
+%		\ddot{A}\left(\boldsymbol{\eta}_0 \right) = 
+%		\begin{bmatrix}
+%		\frac{\partial^2 A}{\partial \eta_1 \partial \eta_1}\left(\boldsymbol{\eta}_0 \right) & \cdots & \frac{\partial^2 A}{\partial \eta_1 \partial \eta_k}\left(\boldsymbol{\eta}_0 \right) \\
+%		\vdots & \ddots & \vdots \\
+%		\frac{\partial^2 A}{\partial \eta_k \partial \eta_1}\left(\boldsymbol{\eta}_0 \right) & \cdots & \frac{\partial^2 A}{\partial \eta_k \partial \eta_k}\left(\boldsymbol{\eta}_0 \right)
+%		\end{bmatrix}.
+%		\end{equation*}
+%	\end{block}
+%	
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%	
+%	\frametitle{Exponential Families}
+%	
+%	\begin{block}{Theorem 1.6.4 (page 60-61 in~\cite{BD2015})}
+%		Suppose $ \mathcal{P} = \{q\left(x, \boldsymbol{\eta}\right) \; | \; \boldsymbol{\eta} \in \mathcal{E} \} $ is a canonical exponential family generated by $ \left(\bm{T}_{k \times 1}, h \right) $ with natural parameter space $ \mathcal{E} $ such that $ \mathcal{E} $ is open. Then the following are equivalent.
+%		\begin{enumerate}[(i)]
+%			\item $ \mathcal{P} $ is of rank $ k $.
+%			\item $ \boldsymbol{\eta} $ is a parameter (identifiable).
+%			\item $ \text{Var}_{\boldsymbol{\eta}}\left[\bm{T}\left(X \right) \right]  $ is positive definite.
+%			\item $ \boldsymbol{\eta} \rightarrow \dot{A}\left(\boldsymbol{\eta} \right) $ is 1-1 on $ \mathcal{E} $.
+%			\item $ A $ is strictly convex on $ \mathcal{E} $.
+%		\end{enumerate}
+%	\end{block}
+%	
+%\end{frame}
+
+
+
+\subsection{Test Statistic: Neyman-Pearson Lemma}
+
+\begin{frame}
+	
+	\frametitle{Test Statistic: Neyman-Pearson Lemma}
+	
+	\begin{itemize}
+		\item Simple Likelihood Ratio / Neyman-Pearson (NP) Statistic
+		\begin{equation*}
+		L\left(x, \theta_0, \theta_1 \right) = \frac{p\left(x, \theta_1 \right)}{p\left(x, \theta_0 \right)}.
+		\end{equation*}
+		\item Likelihood Ratio / Neyman-Pearson (NP) Test (Function) 
+		\begin{equation*}
+		\varphi_k\left(x \right) = 
+		\begin{cases}
+		1 & L\left(x, \theta_0, \theta_1 \right) > k \\
+		c & L\left(x, \theta_0, \theta_1 \right) = k \\
+		0 & L\left(x, \theta_0, \theta_1 \right) < k
+		\end{cases} \qquad
+		0 < c < 1 \; \& \; 0 \leq k \leq \infty.
+		\end{equation*}
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+	\frametitle{Test Statistic: Neyman-Pearson Lemma}
+	
+	\begin{block}{Theorem 4.2.1. (page 224 in~\cite{BD2015})}
+		\begin{enumerate}[(a)]
+			\item If $ \alpha > 0 $ and $ \varphi_k $ is a size $ \alpha $ likelihood ratio test, then $ \varphi_k $ is MP in the class of level $ \alpha $ tests.
+			\item For each $ 0 \leq \alpha \leq 1 $ there exists an MP size $ \alpha $ likelihood ratio test provided that randomization is permitted, $ 0 < \varphi\left(x \right) < 1 $, for some $ x $.
+			\item If $ \varphi $ is an MP level $ \alpha $ test, then it must be a level $ \alpha $ likelihood ratio test; that is, there exists $ k $ such that
+			\begin{equation*}
+			P_{\theta}\left[\varphi\left(X \right) \neq \varphi_k\left(X \right), L\left(X, \theta_0, \theta_1 \right) \neq k \right] = 0
+			\eqno{(4.2.2)}
+			\end{equation*}
+			for $ \theta = \theta_0 $ and $ \theta = \theta_1 $.
+		\end{enumerate}
+	\end{block}
+	
+\end{frame}
+
+
+\subsection{Uniformly Most Powerful Test \& Monotone Likelihood Ratio Model}
+
+
+\begin{frame}
+	
+	\frametitle{UMP \& MLR}
+	
+	\begin{block}{Definition 4.3.1 (page 227 in~\cite{BD2015})}
+		A level $ \alpha $ test $ \varphi^* $ is uniformly most powerful (UMP) for $ H: \theta \in \Theta_0 $ versus $ K: \theta \in \Theta_1 $ if
+		\begin{equation*}
+		\beta\left(\theta, \varphi^* \right) \geq \beta\left(\theta, \varphi \right)
+		\eqno{(4.3.1)}
+		\end{equation*} 
+		for all $ \theta \in \Theta_1 $ and for any other level $ \alpha $ test $ \varphi $.
+	\end{block}
+
+	\begin{block}{Definition 4.3.2 (page 228 in~\cite{BD2015})}
+		The family of models $ \left\{ P_\theta : \theta \in \Theta \right\} $ with $ \Theta \subset \mathbb{R} $ is said to be a monotone likelihood ratio (MLR) family in $ T $ if for $ \theta_1 < \theta_2 $ the distributions $ P_{\theta_1} $ and $ P_{\theta_2} $ are distinct and there exists a statistic $ T\left(x \right) $ such that the ratio $ p\left(x, \theta_2 \right)/p\left(x, \theta_1 \right) $ is an increasing function of $ T\left(x \right) $.
+	\end{block}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	
+	\frametitle{UMP \& MLR}
+	
+	\begin{block}{Theorem 4.3.1 (page 228-229 in~\cite{BD2015})}
+		Suppose $ \left\{ P_\theta : \theta \in \Theta \right\} $ with $ \Theta \subset \mathbb{R} $ is a MLR family in $ T\left(x \right) $.
+		\begin{enumerate}[(1)]
+			\item For each $ t \in \left(0, \infty \right) $, the power funtion $ \beta\left(\theta \right) = E_{\theta}\delta_t\left(X \right) $ is increasing in $ \theta $.
+			\item If $ E_{\theta_0}\delta_t\left(X \right) = \alpha > 0 $, then $ \delta_t $ is UMP level $ \alpha $ for testing $ H: \theta \leq \theta_0 $ versus $ K: \theta > \theta_0 $. 
+		\end{enumerate}
+		Here $ \delta_t $ is the Neyman–Pearson (NP) test function given by
+		\begin{equation*}
+		\delta_t\left(x \right) = 
+		\begin{cases}
+		1 & T\left(x \right) > t \\
+		c & T\left(x \right) = t \\
+		0 & T\left(x \right) < t
+		\end{cases} \qquad
+		0 < c < 1.
+		\end{equation*}
+		Note that $ \delta_t $ equals the LRT $ \varphi_{h(t)} $ for some increasing function $ h $.
+	\end{block}
+	
+\end{frame}
+
+
+
+\subsection{Likelihood Ratio Procedure}
+
+\begin{frame}
+	
+	\frametitle{Likelihood Ratio Procedure}
+	
+	\begin{itemize}
+		\item Generlized Likelihood Ratio / Neyman-Pearson (NP) Statistic
+		\begin{equation*}
+		L\left(\mathbf{x} \right) = \frac{\sup_{\theta \in \Theta_1} p\left(\mathbf{x}, \theta \right)}{\sup_{\theta \in \Theta_0} p\left(\mathbf{x}, \theta \right)}.
+		\end{equation*}
+		\item Equivalently for $ \Theta = \Theta_0 \cup \Theta_1 $
+		\begin{equation*}
+		\lambda\left(\mathbf{x} \right) = \frac{\sup_{\theta \in \Theta} p\left(\mathbf{x}, \theta \right)}{\sup_{\theta \in \Theta_0} p\left(\mathbf{x}, \theta \right)}.
+		\end{equation*}
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+	\frametitle{Likelihood Ratio Procedure}
+	
+	\begin{enumerate}[1]
+		\item Calculate the MLE $ \widehat{\theta} $ of $ \theta $ over $ \Theta $.
+		\item Calculate the MLE $ \widehat{\theta}_0 $ of $ \theta $ over $ \Theta_0 $.
+		\item Form
+		\begin{equation*}
+		\lambda\left(\mathbf{x} \right) = \frac{p\left(\mathbf{x}, \widehat{\theta} \right)}{p\left(\mathbf{x}, \widehat{\theta}_0 \right)}.
+		\end{equation*}
+		\item Find a function $ h $ that is strictly increasing on the range of $ \lambda $ such that $ h\left(\lambda\left(\mathbf{X} \right) \right) $ has a simple form and a tabled distribution under $ H $. Because $ h\left(\lambda\left(\mathbf{X} \right) \right) $ is equivalent to $ \lambda\left(\mathbf{X} \right) $, we specify the size $ \alpha $ likelihood ratio test through the test statistic $ h\left(\lambda\left(\mathbf{X} \right) \right) $ and its $ \left(1-\alpha \right) $th quantile obtained from the table.
+	\end{enumerate}
+	
+\end{frame}
+
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Summary}
+%	
+%	\begin{figure}
+%		\includegraphics[width=1\linewidth]{W9F1}
+%	\end{figure}
+%	
+%	
+%\end{frame}
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{}
+%	
+%	\begin{block}{}
+%		
+%	\end{block}
+%	
+%\end{frame}
+
+
+
+
+
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Bivariate Normal}
+%	
+%	\begin{block}{Conditional Distribution}
+%		The conditional distributions of bivariate normal are normal. That is, 
+%		$$ f_{X|Y} (x|y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} = \frac{1}{\sigma_{X|Y} \sqrt{2 \pi}} \exp \left[- \frac{(x-\mu_{X|Y})^2}{2 \sigma_{X|Y}^2} \right] $$
+%		where
+%		$$ \mu_{X|Y} = \mu_X + \rho \frac{\sigma_X}{\sigma_Y} (y - \mu_Y) \qquad \text{and} \qquad \sigma_{X|Y}^2 = (1-\rho^2) \sigma_X^2 $$
+%	\end{block}
+%	
+%\end{frame}
+
+
+
+
+
+
+
+
+%------------------------------------------------
+
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Summary of Different Methods}
+%	
+%	\tiny
+%	\begin{table}[H]
+%		\centering
+%		\begin{tabular}{|l|l|l|l|}
+%			\hline
+%			\textbf{Subspace Clustering Methods}                                                    & \textbf{Advantages}                                                                                                                                                                                                              & \textbf{Disadvantages}                                                                                                                          & \textbf{Assumption}                                                                                                                                                                       \\ \hline
+%			\textbf{\begin{tabular}[c]{@{}l@{}}Local Subspace Affinity \\ (LSA)\end{tabular}}       & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}1. Conceptually simple\\ 2. Computationally fast\\ 3. Robust against outliers \\     to some extent\end{tabular}}                                                                     & \begin{tabular}[c]{@{}l@{}}1. Only work in     \\ linear subspaces\\ 2. Inaccurate near \\ the intersection of \\ two subspaces\end{tabular}    & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}The number of the nearest \\ neighbor needs to be small \\ enough and large enough\end{tabular}}                                               \\ \cline{1-1} \cline{3-3}
+%			\textbf{\begin{tabular}[c]{@{}l@{}}Local Best Fit Flat \\ (SLBF)\end{tabular}}          &                                                                                                                                                                                                                                  & \begin{tabular}[c]{@{}l@{}}Inaccurate near \\ the intersection of \\ two subspaces\end{tabular}                                                 &                                                                                                                                                                                           \\ \hline
+%			\textbf{\begin{tabular}[c]{@{}l@{}}Spectral Curvature Clustering \\ (SCC)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}1. A better similarity \\ measure using points \\ from the entire data set\\ 2. Better justified \\ theoretically\\ 3. Can be extended to \\ nonlinear manifolds \\ using kernel methods\end{tabular} & \begin{tabular}[c]{@{}l@{}}Computational \\ complexity \\ would grow \\ exponentially \\ with the dimension \\ of the \\ subspaces\end{tabular} & \begin{tabular}[c]{@{}l@{}}1. A prior knowledge about \\ the subspace dimension might \\ be required\\ 2. The subspaces need to have \\ the same or very close \\ dimensions\end{tabular} \\ \hline
+%			\textbf{\begin{tabular}[c]{@{}l@{}}Low-Rank Subspace Clustering \\ (LRSC)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}1. Computational simplicity\\ 2. Closed form solution \\ with uncorrupted data or \\ data corrupted by noise\end{tabular}                                                                             & \begin{tabular}[c]{@{}l@{}}Few theoretical \\ justification\\ with corrupted data\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}1. Uncorrupted data needs to \\ be drawn from independent \\ subspaces\\ 2. The union of subspaces \\ needs to be of low rank\end{tabular}                     \\ \hline
+%			\textbf{\begin{tabular}[c]{@{}l@{}}Sparse Subspace Clustering \\ (SSC)\end{tabular}}    & \begin{tabular}[c]{@{}l@{}}Can recover a subspace \\ preserving representation \\ under much broader \\ conditions\end{tabular}                                                                                                  & \begin{tabular}[c]{@{}l@{}}No solution in \\ closed form\end{tabular}                                                                           & \begin{tabular}[c]{@{}l@{}}1. Subspaces need to be \\ sufficiently separated\\ 2. Data needs to be well \\ distributed inside the \\ subspaces\end{tabular}                               \\ \hline
+%		\end{tabular}
+%	\end{table}
+%	
+%	
+%	
+%\end{frame}
+
+
+
+
+
+
+\section{Problems}
+
+
+
+\begin{frame}
+	
+	\frametitle{Problems - HW7}
+	
+	\begin{itemize}
+		\item Measure-Theoretic Probability
+		\begin{equation*}
+		P\left[E \right] = \int_{\omega \in E} \mu_F\left(d \omega \right).
+		\end{equation*}
+		\item Accumulation Point: if $ x $ is an accumulation point of a real sequence $ \left(x_n \right) $, then there exists a subsequence $ \left(x_{n_k} \right) $ converging to $ x $.
+		\item Denseness: a subset $ A $ of a topological space $ X $ is called dense in $ X $ if every point $ x $ in $ X $ either belongs to $ A $ or is a acuumulation point of $ A $.
+		\item Continuous Function: $ f $ is continuous at $ x_0 $ iff $ f\left(x_n \right) \to f\left(x_0 \right) $ for any sequence $ x_n \to x_0 $.
+	\end{itemize}
+	
+	
+	
+\end{frame}
+
+
+
+
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Problems}
+%	
+%	\begin{block}{Problem 1.5.12, page 86 in~\cite{BD2015}}
+%		Let $ \mathcal{P} = \{P_{\theta} \; | \; \theta \in \Theta \} $ where $ P_{\theta} $ is discrete concentrated on $ \mathcal{X} = \{x_1, x_2, \cdots \} $. Let
+%		\begin{equation*}
+%		p\left(x, \theta \right) = P_{\theta}\left[X = x \right] = L_x\left(\theta \right) > 0 \;\; \text{on} \;\; \mathcal{X}.
+%		\end{equation*}
+%		Show that $ \frac{L_X\left(\cdot \right)}{L_X\left(\theta_0 \right)} $ is minimal sufficient.
+%	\end{block}
+%	
+%	
+%\end{frame}
+
+
+
+
+
+
+%------------------------------------------------
+
+
+%\section{Covering Number Bound}
+
+
+%------------------------------------------------
+
+%\subsection{Covering Number}
+%
+%\begin{frame}
+%	
+%	\frametitle{Covering Number}
+%	
+%	\begin{definition}[Covering Number]
+%		Let $ (A,d) $ be a metric space. For any $ \epsilon > 0 $, the covering number $ \mathcal{N} (A, \epsilon, d) $ of $ A $ with respect to $ d $ is the minimal $ k \in \mathbb{N} $ such that $ A $ can be covered with $ k $ balls of radius $ \epsilon $. i.e. 
+%		$$ \forall a \in A, \quad \exists a_i \in \{a_1, . . . , a_k \} \subset A: \quad d(a, a_i) \le \epsilon . $$
+%	\end{definition}
+%    
+%    \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+%    	
+%    	\column{.45\textwidth} % Left column and width
+%    	\begin{figure}
+%    		\includegraphics[width=0.7\linewidth]{p1}
+%    	\end{figure}
+%      
+%    	
+%    	\column{.5\textwidth} % Right column and width
+%    	
+%    	
+%    	 A pentagon $ K $ is covered by seven balls of radius $ \epsilon $, which implies that $ \mathcal{N} (K, \epsilon, d) \le 7 $. 
+%    	
+%    	\vspace{0.5cm}
+%    	
+%    	 \rightline{{\tiny (Figure from High-Dimensional Probability)}}
+%    	
+%    \end{columns}
+%
+%
+%\end{frame}
+
+
+
+
+
+%------------------------------------------------
+
+%\subsection{General Case}
+%
+%\begin{frame}
+%	
+%	\frametitle{Covering Number Bounds Rademacher Complexity}
+%	
+%	\begin{lemma}[]
+%		Let $ c = \min_{\bar{\bm{a}}} \max_{\bm{a} \in A} ||\bm{a} - \bm{\bar{a}}|| $. Then for $ \forall M \in \mathbb{N}^+ $, with respect to $ L_2 $ norm, we have
+%		$$ \widehat{\mathcal{R}}_S(A) \le \frac{c2^{-M}}{\sqrt{m}} + \frac{6c}{m} \sum_{k=1}^{M} 2^{-k} \sqrt{\log (\mathcal{N}(A,c2^{-k}, \ell_2))}. $$
+%	\end{lemma}
+%
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Proof Outline}
+%	
+%	\begin{block}{Step 1}
+%		Consider the set $ B_0 = \{ 0 \} $ and note that it is a $ c $-cover of $ A $. Let $ B_1, \cdots, B_M $ be sets such that each $ B_k $ corresponds to a minimal $ (c2^{-k}) $-cover of $ A $. Let $ \bm{a^*} = \arg \max_{\bm{a} \in A} <\bm{\sigma}, \bm{a}^*> $. For each $ k $, let $ \bm{b}^{(k)} $ be the nearest neighbor of $ \bm{a}^* $ in $ B_k $.  Then we show that
+%		$$ || \bm{b}^{(k)} - \bm{b}^{(k-1)} || \le 3c 2^{-k}. $$
+%	\end{block}
+%	
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Proof Outline}
+%	
+%	\begin{block}{Step 2}
+%		Define $ \hat{B}_k = \{ (\bm{a} - \bm{a}^\prime): \bm{a} \in B_k, \bm{a}^\prime \in B_{k-1}, || \bm{a} - \bm{a}^\prime || \le 3c 2^{-k} \} $, we show that
+%		$$ \widehat{\mathcal{R}}_S(A) \le \frac{1}{m} \mathbb{E}  \bigg[||\bm{\sigma}|| \  ||\bm{a}^* - \bm{b}^{(M)}|| \bigg] + \sum_{k=1}^{M} \frac{1}{m} \mathbb{E} \bigg[ \sup_{\bm{a} \in \hat{B}_k} <\bm{\sigma}, \bm{a}> \bigg]. $$
+%	\end{block}
+%
+%	\begin{block}{Step 3}
+%		Show that
+%		$$ \frac{1}{m} \mathbb{E}  \bigg[||\bm{\sigma}|| \  ||\bm{a}^* - \bm{b}^{(M)}|| \bigg] \le \frac{c2^{-M}}{\sqrt{m}}, $$
+%		$$ \frac{1}{m} \mathbb{E} \sup_{\bm{a} \in \hat{B}_k} <\bm{\sigma}, \bm{a}> \le \frac{6c 2^{-k} \sqrt{\log (\mathcal{N}(A, c2^{-k}, \ell_2))}}{m}. $$
+%	\end{block}
+%	
+%\end{frame}
+
+
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Covering Number Bound}
+%	
+%	\begin{theorem}[]
+%		Let $ H $ be a family of functions mapping $ X $ to a subset of real numbers $ Y \subseteq \mathbb{R} $. Let $ D $ denote a distribution over $ X \times Y $. Let $ S = \{(x_i, y_i) \}_{i=1}^m $ denote i.i.d. sample drawn from $ D $. With respect to squared loss, we have
+%		$$ R(h) = \mathbb{E}_{(x,y) \sim D} [(h(x)-y)^2], \quad \widehat{R}(h) = \frac{1}{m} \sum_{i=1}^{m} (h(x_i)-y_i)^2. $$
+%		Assume that $ H $ is bounded, i.e. 
+%		$$ \exists M > 0: \  |h(x) - y| \le M \quad \forall (x,y) \in X \times Y. $$ 
+%		Then with respect to $ L_\infty $ norm we have 
+%		$$ P_{S \sim D^m} \bigg[\sup_{h \in H} |R(h) - \widehat{R}(h)| \ge \epsilon \bigg] \le \mathcal{N} \bigg(H, \frac{\epsilon}{8M}, \ell_\infty \bigg) 2 \exp \bigg(\frac{-m \epsilon^2}{2M^4} \bigg). $$
+%	\end{theorem}
+%
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+%\begin{frame}
+%	
+%	\frametitle{Proof Outline}
+%	
+%	\begin{block}{Step 1}
+%		Let $ L_S = R(h) - \widehat{R}(h) $, we show that for all $ h_1, h_2 \in H $ and any sample $ S $, the following holds:
+%		$$ |L_S(h_1) - L_S(h_2)| \le 4M ||h_1 - h_2||_\infty = 4M \max_{x \in S} |h_1(x) - h_2(x)|. $$
+%	\end{block}
+%
+%    \begin{block}{Step 2}
+%    	Assume that $ H $ can be covered by $ k $ subsets $ B_1, \cdots, B_k $, i.e. $ H = B_1 \cup \cdots \cup B_k $. Then we show that for any $ \epsilon > 0 $, the following holds:
+%    	$$ P_{S \sim D^m} \bigg[\sup_{h \in H} |L_S(h)| \ge \epsilon \bigg] \le \sum_{i=1}^{k} P_{S \sim D^m} \bigg[\sup_{h \in B_i} |L_S(h)| \ge \epsilon \bigg]. $$
+%    \end{block}
+%
+%\end{frame}
+
+
+%------------------------------------------------
+
+%\begin{frame}
+%	
+%	\frametitle{Proof Outline}
+%	
+%	\begin{block}{Step 3}
+%		Let $ k = \mathcal{N} \bigg(H, \frac{\epsilon}{8M}, \ell_\infty \bigg) $ and $ B_1, \cdots, B_k $ be 
+%		balls of radius $ \frac{\epsilon}{8M} $ centered at $ h_1, \cdots, h_k $ covering $ H $. Use the result from Step 1, we show that for all $ i \in [1,k] $, the following holds:
+%		$$ P_{S \sim D^m} \bigg[\sup_{h \in B_i} |L_S(h)| \ge \epsilon \bigg] \le P_{S \sim D^m} \bigg[ |L_S(h_i)| \ge \frac{\epsilon}{2} \bigg]. $$
+%		Then by Hoeffding's inequality, we have
+%		$$ P_{S \sim D^m} \bigg[ |L_S(h_i)| \ge \frac{\epsilon}{2} \bigg] \le 2 \exp \bigg(\frac{-m \epsilon^2}{2M^4} \bigg). $$
+%	\end{block}
+%
+%\end{frame}
+
+
+%------------------------------------------------
+
+%\begin{frame}
+%	
+%	\frametitle{Proof Outline}
+%	
+%	\begin{block}{Step 4}
+%		\begin{equation}
+%		\begin{split}
+%		P_{S \sim D^m} \bigg[\sup_{h \in H} |R(h) - \widehat{R}(h)| \ge \epsilon \bigg] & \le \sum_{i=1}^{k} P_{S \sim D^m} \bigg[\sup_{h \in B_i} |L_S(h)| \ge \epsilon \bigg] \\
+%		& \le \sum_{i=1}^{k} P_{S \sim D^m} \bigg[ |L_S(h_i)| \ge \frac{\epsilon}{2} \bigg] \\
+%		& \le \sum_{i=1}^{k} 2 \exp \bigg(\frac{-m \epsilon^2}{2M^4} \bigg) \\
+%		& = \mathcal{N} \bigg(H, \frac{\epsilon}{8M}, \ell_\infty \bigg) 2 \exp \bigg(\frac{-m \epsilon^2}{2M^4} \bigg).
+%		\nonumber
+%		\end{split}
+%		\end{equation}
+%	\end{block}
+%	
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+%\subsection{Linear Function Classes}
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Linear Function Classes}
+%	
+%	\begin{lemma}[Maurey]
+%		In a Hilbert space, let
+%		$$ f = \sum_{j=1}^{d} w_j z_j \quad \text{and} \quad \alpha = \sum_{j=1}^{d} w_j \le 1, $$
+%		where $ ||z_j|| \le L $, $ w_j \ge 0 $. Then for every $ m \ge 1 $, $ \exists b_1, \cdots, b_d \ge 0 $ such that
+%		$$ \bigg|\bigg| f - \frac{1}{m} \sum_{j=1}^{d} b_j z_j \bigg|\bigg|^2 \le \frac{\alpha L^2 - ||f||^2}{m} \quad \text{and} \quad \beta = \sum_{j=1}^{d} b_j \le m. $$
+%	\end{lemma}
+%
+%   
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+%\begin{frame}
+%	
+%	\frametitle{Covering Number Bound for Linear Function Classes}
+%	
+%	\begin{theorem}[]
+%		Consider linear function classes below. If $ ||\bm{x}||_p \le L $, $ ||\bm{w}||_q \le B $, $ 2 \le p \le \infty $ and $ 1/p + 1/q = 1 $. Then giving sample of size $ m $, we have
+%		$$ \log_2 \mathcal{N}(H, \epsilon, \ell_2) \le \bigg \lceil \frac{B^2 L^2}{\epsilon^2} \bigg \rceil \log_2 (2d+1). $$
+%	\end{theorem}
+%	
+%	$$ H = \bigg\{\bm{x} \  \mapsto \  <\bm{w}, \bm{x}> = \sum_{i=1}^{d} w_i x_i: \  \bm{x} \in X \subset \mathbb{R}^d  \bigg\}. $$
+%	
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+%\begin{frame}
+%	
+%	\frametitle{Proof Outline}
+%	
+%	\begin{block}{Step 1}
+%		Let $ X = (x_{ij})_{m \times d} $ and let $ \bm{x}_{(i)} $ denote the $ i $ th row, $ \bm{x}^{(j)} $ denote the $ j $ th column. Consider
+%		$$ \bm{z}_j = \frac{m^{1/p} BL}{||\bm{x}^{(j)}||_p} \bm{x}^{(j)}, \quad w_j^\prime = \frac{||\bm{x}^{(j)}||_p}{m^{1/p} BL} w_j. $$ We show that
+%		$$ \sum_{j=1}^{d} |w_j^\prime| \le 1 \quad \text{and} \quad ||\bm{z}_j||_2 \le  m^{1/2} BL. $$
+%	\end{block}
+%
+%	
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	
+%	\frametitle{Proof Outline}
+%	
+%	\begin{block}{Step 2}
+%		Let 
+%		$ f = \sum_{j=1}^{d} w_j \bm{x}^{(j)} = \sum_{j=1}^{d} w_j^\prime \bm{z}_j. $
+%		Then by Maurey's Lemma, take $ k \ge (BL / \epsilon)^2 $, we could find $ b_1, \cdots, b_k \ge 0 $ such that
+%		$$ \sum_{j=1}^{d} b_j \le k \quad \text{and} \quad \bigg|\bigg| f - \frac{1}{k} \sum_{j=1}^{d} b_j \bm{z}_j \bigg|\bigg|^2 \le m \epsilon^2. $$
+%		This implies that $ \mathcal{N}(H, \epsilon, \ell_\infty) $ is no larger than the number of integer solutions of $ \sum_{j=1}^{d} b_j \le k $, which is less than or equal to $ (2d+1)^k $. 
+%	\end{block}
+%	
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+%\begin{frame}
+%	
+%	\frametitle{Corollary}
+%	
+%	\begin{corollary}
+%		Consider linear function classes below. If $ ||\bm{x}||_2 \le L $, $ ||\bm{w}||_2 \le B $. Then giving sample of size $ m $, we have
+%		$$ \log_2 \mathcal{N}(H, \epsilon, \ell_2) \le \bigg \lceil \frac{B^2 L^2}{\epsilon^2} \bigg \rceil \log_2 (2m+1). $$
+%	\end{corollary}
+%	
+%	$$ H = \bigg\{\bm{x} \  \mapsto \  <\bm{w}, \bm{x}> = \sum_{i=1}^{d} w_i x_i: \  \bm{x} \in X \subset \mathbb{R}^d  \bigg\}. $$
+%	
+%\end{frame}
+
+
+
+
+%------------------------------------------------
+
+
+%\subsection{Support Vector Machine}
+
+
+%------------------------------------------------
+
+
+
+
+%\begin{frame}
+%	\frametitle{Definitions}
+%	\begin{block}{Operator norm}
+%		The operator norm is a means to measure the "size" of certain linear operators.
+%		$$\left\Vert A \right\Vert_{op} = \inf\{c\geq0:\left\Vert Av \right\Vert \leq c\left\Vert v \right\Vert,\forall v\in V\}$$
+%	\end{block}
+%	
+%	\begin{block}{Eigenvalues and eigenfunctions of the integral operator}
+%		Let $\lambda_1\geq\lambda_2\geq\dots$ be the eigenvalues of the integral operator.
+%		
+%		Denote by $\psi_n(\cdot),n\in \mathbb{N}$, the corresponding eigenfunctions.
+%	\end{block}
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Notations}
+%	\begin{block}{$\mathcal{F}_{R_w}$}
+%		The hypothesis class implemented by SVM on an m-sample with weight vector (in feature space) bounded by $R_w$.
+%	\end{block}
+%	
+%	
+%	\begin{block}{$\ell_\infty^{X^m}$ norm }
+%		The $\ell_\infty^{X^m}$ norm with respect to $X^m$ of $f\in \mathcal{F}$ is defined as:
+%		$$\norm{f}_{\ell_\infty^{X^m}}:=\max_{i = 1,\dots,m}|f(x_i)|$$
+%	\end{block}
+%	
+%
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Theorem}
+%	\begin{theorem}[Main Result]
+%		Suppose $k$ is a kernel satisfying the hypothesis of Mercer's Theorem. Hypothesis class $\mathcal{F}_{R_w}$,
+%		eigenfunctions $\psi_n(\cdot)$ and eigenvalues $\lambda$ are defined as above. Let $x_1,\dots,x_m\in \mathcal{X}$ be $m$ data points. Let $C_k = \sup_n \left\Vert\psi_n\right\Vert_{L_\infty}$.
+%		
+%		For $n\in \mathbb{N}$ set
+%		$$\epsilon_n^* = 6R_wC_k\sqrt{j^*(\frac{\lambda_1\dots\lambda_{j^*}}{n^2})^{\frac{1}{j^*}} + \sum_{i = j^* + 1}^\infty\lambda_i}$$
+%		with $$j^* = \min\{j:\ \lambda_{j+1} < (\frac{\lambda_1\dots\lambda_j}{n^2})^{\frac{1}{j}}\}$$
+%		Then $C_k < \infty$ and
+%		$$\mathcal{N}(\mathcal{F}_{R_w}, \epsilon_n^* ,\ell_\infty^{X^m}) < n$$
+%	\end{theorem}
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Definitions}
+%	\begin{block}{Entropy number}
+%		The $n$th entropy number of a set $M \in E$, for $n\in \mathbb{N}$ is 
+%		$$\epsilon_n(M) := \inf\{\epsilon>0: \exists\ \epsilon-cover\ for\ M\ in\ E\ containing\ n\ or\ fewer\ points\}$$
+%		The function $n\rightarrow \epsilon_n(M)$ can be thought of as the functional inverse of the function $\epsilon \rightarrow\mathcal{N}(M,\epsilon,d)$.
+%	\end{block}
+%	
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Intuition}
+%	\begin{enumerate}
+%		\item The quantity $\epsilon_n^*$ is an upper bound on the entropy number of $\mathcal{F}_{R_w}$.
+%		\item For a given value of $n$, $j^*$  can be viewed as the effective dimension of the function class. 
+%		\item $j^*$ depends on the rate of decay of the eigenvalues.
+%		\item For smooth kernels the effective dimension is small. It turns out that all kernels satisfying Mercer’s conditions are sufficiently smooth for $j^*$ to be finite.
+%	\end{enumerate}
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Theorem}
+%	\begin{theorem}[Mercer]
+%		Suppose $k\in L_\infty(\chi^2)$ is a symmetric kernel such that the integral operator $T_k:L_2(\chi)\rightarrow L_2(\chi)$,
+%		$$T_kf(\cdot) := \int_\chi k(\cdot,y)f(y)dy$$
+%		Let $\psi\in L_2(\chi)$ be the eigenfunction of $T_k$ associated with the eigenvalue $\lambda_j \neq 0$ and normalized such $\left\Vert\psi_j\right\Vert_{L_2} = 1$ and let $\bar{\psi_j}$ denote its complex conjugate. Suppose $\psi_j$ is continuous for all $j\in \mathbb{N}$. Then
+%		\begin{enumerate}
+%			\item $(\lambda_j(T))_j \in \ell_1$
+%			\item $\phi_j \in L_\infty(\chi)$ and $\sup_j\left\Vert\psi_j\right\Vert_{L_\infty} < \infty$
+%			\item $k(x,y) = \sum_{j\in\mathbb{N}} \lambda_j\psi_j(x)\psi_j(y)$ holds for all $(x,y)$, where the series converges absolutely and uniformly for all $(x,y)$.
+%		\end{enumerate}
+%		We call a kernel satisfying the conditions of this theorem a Mercer kernel.
+%	\end{theorem}
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Theorem}
+%	\begin{theorem}[Entropy numbers for $\Phi(\chi)$]
+%		Let $k:\chi\times\chi\rightarrow \mathbb{R}$ be Mercer kernel. Choose $a_j>0$ for $j\in \mathbb{N}$ such that $(\sqrt{\lambda_s}/a_s)_s\in \ell_2$, and define
+%		$$A:(x_j)_j\rightarrow (R_Aa_jx_j)_j$$
+%		with $R_A:=C_k\norm{(\sqrt{\lambda_j}/a_j)}_{\ell_2}$. Then
+%		$$\epsilon_n(A:\ell_2\rightarrow \ell_2)\leq \sup_{j\in\mathbb{N}}6C_k\norm{(\sqrt{\lambda_s}/a_s)_s}_{\ell_2}(\frac{a_1\dots a_j}{n})^\frac{1}{j}$$
+%	\end{theorem}
+%	The notation $(a_s)_s\in \ell_p$ donates the sequence $(a_1,a_2,\dots)$ such that $(\sum_{s=0}^\infty|a_s|^p)^{1/p}<\infty$.
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Theorem}
+%	\begin{theorem}[Bounds for SV classes]
+%		Let $k$ be a Mercer kernel. Then for all $n \in N$, \\
+%		$$\epsilon_n (\mathcal{F}_{R_w})\leq R_w {\inf_{(a_s)_s:(\sqrt{\lambda_x}/a_s)_s \in \ell_2}} \epsilon_n(A),$$
+%		where $A$ is defined as the previous theorem. 
+%	\end{theorem}
+%	
+%	Combining these two theorems gives effective bounds on $\sup_{x_1,\dots,x_m\in \chi^m} \mathcal{N}^m (\mathcal{F}_{R_w}, \epsilon,l_\infty^{X^m})$, which denoted as $\mathcal{N}^m (\mathcal{F}_{R_w}, \epsilon)$: 
+%	$$\mathcal{N}^m(\mathcal{F}_{R_w},\epsilon_0)\leq n.$$
+%	
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	
+%	We assume that $(\lambda_s)_s$ is fixed and sorted in non-increasing order, and $a_i > 0$ for all $i$. For all $i$.  For $j \in \mathbb{N}$, we define the set
+%	$$A_j = \{ (a_s)_s : {{\sup}_{i\in N}} (\frac{a_1...a_i}{n})^{\frac{1}{i}} =(\frac{a_1...a_j}{n})^{\frac{1}{j}} \} $$
+%	In other words, $A_j$ is the set of $(a_s)_s$ such that the ${{\sup}_{i\in \mathbb{N}}}(\frac{a_1...a_i}{n})^{\frac{1}{i}}$ is attained.
+%	Let
+%	$$B((a_s)_s，n,j) = ||(\sqrt{\lambda_s}/a_s)_s||_{\ell_2} (\frac{a_1...a_j}{n})^\frac{1}{j}$$,
+%	
+%	The key: to show that the infimum in last Theorem and the supremum in the previous one can be achieved and to give an explicit recipe for the sequence $(a_s)_s$ and number $j^*$ that achieve them.
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+
+%\begin{frame}
+%	\frametitle{Theorem}
+%	\begin{theorem}
+%		Let $k: \chi \times \chi \rightarrow R$ be a Mercer kernel. Suppose $\lambda_1,\lambda_2,...$ are eigenvalues of $T_k$. For any $n \in N$, the minimum\\
+%		$$j^* = min\{j :  \lambda_{j+1} < (\frac{\lambda_1...\lambda_j}{n^2})^{\frac{1}{j}}\}$$
+%		always exist, and \\
+%		$${\inf}_{(a_s)_s:(\sqrt{\lambda_s}/a_s)_s \in \ell_2 j\in N} \sup B((a_s)_s,n,j) \leq B((a^*_s)_s,n,j^*)$$
+%		\begin{eqnarray*}a_i^*=
+%			\begin{cases}
+%				\sqrt{\lambda_i}, &when \ i\leq j^*\cr 
+%				(\frac{\sqrt{\lambda_1...\lambda_{j^*}}}{n})^{\frac{1}{j^*}}, &when \ i>j^*\end{cases}
+%		\end{eqnarray*}
+%		This choice of $(a_s)$ results in a simple form for the SVM bounds in terms of $n$ and $\lambda_i$:\\
+%	\end{theorem}
+%	
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+%\begin{frame}
+%	\frametitle{Proof Outline}
+%	The proof involves the following four steps.\\
+%	\begin{block}{Step 1}
+%		We first prove that for all $n\in N$,
+%		$$\hat{j}  = min\{j :  \lambda_{j+1} < (\frac{\lambda_1...\lambda_j}{n^2})^{\frac{1}{j}}\}$$ 
+%		exists, whenever $(\lambda_i)$  are the eigenvalues of a Mercer kernel.\\
+%	\end{block}
+%	\begin{block}{Step 2}
+%		We then prove that for any $n\in N$,
+%		
+%		\begin{eqnarray*}
+%			{\inf_{(a_s)_s:(\sqrt{\lambda_s}/a_s)_s \in \ell}} \sup B((a_s)_s,n,j)\cr
+%			\leq {\inf _{j \in N}}\ {{ \inf _{(a_s) \in A_j}}} B((a_s)_s,n,j)
+%		\end{eqnarray*}
+%	\end{block}
+%\end{frame}
+
+%------------------------------------------------
+
+
+%\begin{frame}
+%	\begin{block}{Step 3}The next step is to prove that the choice is optimal. It is separated into two parts:\\
+%		
+%		(a) For any $j_0 \leq j^*$ ,and any $(a_s)_s\in A_{j0}$,\\
+%		$$B((a_s),n,j) \geq B((a^*_s),n,j^*)$$ holds.\\
+%		(b) For any $j_0 > j^*$ ,and any $(a_s)_s\in A_{j0}$,\\
+%		$$B((a_s),n,j) \geq B((a^*_s),n,j^*)$$ also holds.\\
+%	\end{block}
+%	\begin{block}{Step 4}Finally we show that  $(a_s^*)_{s^*}\in A_j$ and $(\sqrt{\lambda_s}/a_s^*)_s \in \ell_2$ when $(a_s^*)_{s^*}$ is chosen.
+%	\end{block}
+%\end{frame}
+
+
+%------------------------------------------------
+
+
+%\begin{frame}
+%	\frametitle{Corollary}
+%	\begin{corollary}
+%		
+%		Let $k: \chi \times \chi \rightarrow R$ be a Mercer kernel and let $A$ as defined before. Then for any $n \in N$, the entropy numbers satisfy\\
+%		\begin{eqnarray}
+%		{\inf_{(a_s)_s:(\sqrt{\lambda_s}/a_s)_s \in \ell}} \epsilon_n (A: \ell_2 \rightarrow \ell_2)\cr
+%		\leq 6C_k \sqrt{j^*(\frac{\lambda_1...\lambda_{j^*}}{n^2})^{\frac{1}{j^*}}+\sum_{i = j^* +1}^{\infty}\lambda_i}
+%		\cr
+%		with\ j^* = min\{j :  \lambda_{j+1} < (\frac{\lambda_1...\lambda_j}{n^2})^{\frac{1}{j}}\}.
+%		\end{eqnarray}
+%	\end{corollary}
+%	
+%	
+%	This corollary, together with {\it Theorem: Bounds for SV classes}, implies the main result.
+%\end{frame}
+
+
+
+%------------------------------------------------
+
+
+\begin{frame}
+	
+	\frametitle{References}
+	
+	\footnotesize{
+		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+			\bibitem[B\&D, 2015]{BD2015} 
+			Bickel, Peter J., and Kjell A. Doksum. \ (2015) Mathematical statistics: basic ideas and selected topics, volume I. CRC Press.
+		\end{thebibliography}
+		
+%		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%			\bibitem[SSBD, 2014]{c1} 
+%			Shalev-Shwartz S, Ben-David S. \ (2014) Understanding machine learning: From theory to algorithms. Cambridge university press.
+%		\end{thebibliography}
+%		
+%		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%			\bibitem[MRT, 2012]{c2} 
+%			Mohri M, Rostamizadeh A \ \& Talwalkar A. \ (2012) Foundations of machine learning. MIT press.
+%			
+%		\end{thebibliography}
+%		
+%		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%			\bibitem[Zhou, 1995]{c3} 
+%			Zhou D X.\ (1995) The covering number in learning theory. {\it Journal of Complexity}. {\bf 18}(3):739-767.
+%		\end{thebibliography}
+%		
+%		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%			\bibitem[Zhang, 2002]{c4} 
+%			Zhang T.\ (2002) Covering number bounds of certain regularized linear function classes. {\it Journal of Machine Learning Research}. {\bf 2}(3):527-550.
+%		\end{thebibliography}
+%		
+%		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%			\bibitem[GBS, 1999]{c5} 
+%			Guo Y, Bartlett P L, \ \& Shawe-Taylor J.\ (1999) Covering numbers for support vector machines. {\it Proceedings of the twelfth annual conference on Computational learning theory}. ACM:267-277.
+%		\end{thebibliography}
+%		
+%		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%			\bibitem[Pontil, 2003]{c6} 
+%			Pontil M. \ (2003) A note on different covering numbers in learning theory. {\it Journal of Complexity}. {\bf 19}(5):665-671.
+%		\end{thebibliography}
+		
+	}
+\end{frame}
+
+
+
+
+
+%------------------------------------------------
+
+\begin{frame}
+	\Huge{\centerline{Thanks for listening!}}
+\end{frame}
+
+
+%------------------------------------------------
+
+
+
+
+
+
+\end{document} 
